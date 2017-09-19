@@ -118,7 +118,7 @@ function main() {
       campaignHistory[row['CampaignName']].change.impressions, campaignHistory[row['CampaignName']].change.ctr, campaignHistory[row['CampaignName']].change.cpc, campaignHistory[row['CampaignName']].change.cost, campaignHistory[row['CampaignName']].change.convRate
     ]);
   }
-  SPREADSHEET_LOG.appendRow([new Date(),'Anomoly Detector','Notice','Script ran - '+ alerts.length +' campaigns triggered alerts']);
+  SPREADSHEET_LOG.appendRow([new Date(),'Anomaly Detector','Notice','Script ran - '+ alerts.length +' campaigns triggered alerts']);
   //Check if we need to alert anyone
   if(alerts.length > 0)
   {
@@ -160,7 +160,7 @@ function main() {
       //And send the email to the email addresses in the Google sheet
       MailApp.sendEmail(SCRIPT_SETTINGS[2][2],"Epiphany AdWords Scripts - PPC Performance Anomaly",email_text, {htmlBody:html_email_text});
     } else {
-      SPREADSHEET_LOG.appendRow([new Date(),'Anomoly Detector','Notice','Alert Emails turned off, but there were '+ alerts.length +' campaigns that triggered alerts']); 
+      SPREADSHEET_LOG.appendRow([new Date(),'Anomaly Detector','Notice','Alert Emails turned off, but there were '+ alerts.length +' campaigns that triggered alerts']); 
     }
   }
 }
